@@ -6,6 +6,4 @@ env:
 services:
   - postgresql
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-script:
-  - npm run test
+  - psql -c 'create database travis_ci_test;' -U trial
