@@ -9,6 +9,7 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres 
 install:
   - npm install sequelize
+  - npm install sequelize-cli
   - npm install pg
   - npm install pg-hstore
 script:
