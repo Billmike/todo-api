@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "6"
+env:
+  - NODE_ENV=test
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres 
+install:
+  - npm install sequelize
+  - npm install sequelize-cli
+  - npm install pg
+  - npm install pg-hstore
+script:
+  - sequelize db:migrate
+deploy:
+  provider: heroku
+  api_key:
+    secure: "73334bfc-060c-4a74-a6a0-c4972d3e272b"
+  app: tranquil-tor-30012
