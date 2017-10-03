@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "6.11.2"
+  },
   "scripts": {
     "start": "babel-node ./bin/www",
     "start:dev": "nodemon --exec babel-node ./bin/www",
