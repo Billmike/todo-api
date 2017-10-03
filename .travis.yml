@@ -15,7 +15,7 @@ install:
 script:
   - sequelize db:migrate
 deploy:
-  - provider: heroku
-  - api_key:
+  provider: heroku
+  api_key:
     secure: "73334bfc-060c-4a74-a6a0-c4972d3e272b"
-  - app: tranquil-tor-30012
+  app: tranquil-tor-30012
