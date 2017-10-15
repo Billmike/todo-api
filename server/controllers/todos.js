@@ -16,7 +16,7 @@ module.exports = {
         include: [{
           model: TodoItem,
           as: 'todoItems',
-        }]
+        }],
       })
       .then(todos => res.status(200).send({ status: 'Success', feed: todos }))
       .catch(error => res.status(400).send(error));
@@ -43,21 +43,19 @@ module.exports = {
         include: [{
           model: TodoItem,
           as: 'todoItems',
-        }]
+        }],
       })
       .then((todo) => {
         if (!todo) {
           res.status(404).send({
             status: 'Not Found',
-            message: 'Todo not found.'
+            message: 'Todo not found.',
           });
         }
         return todo
-          .update(
-            req.body, {
-              fields: Object.keys(req.body),
-            },
-          )
+          .update(req.body, {
+            fields: Object.keys(req.body),
+          })
           .then(() => res.status(201).send({ status: 'Success', feed: todo }))
           .catch(error => res.status(400).send(error));
       })
@@ -72,7 +70,7 @@ module.exports = {
         }
         return todo
           .destroy()
-          .then(() => res.status(200).send({ status: true, message: 'Todo deleted successfully.'}))
+          .then(() => res.status(200).send({ status: true, message: 'Todo deleted successfully.' }))
           .catch(error => res.status(400).send(error));
       })
       .catch(error => res.status(400).send(error));
